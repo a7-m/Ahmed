@@ -1,0 +1,29 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="p3a" x1="80" y1="320" x2="560" y2="60" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#0ea5e9"/>
+    <stop offset="1" stop-color="#22d3ee"/>
+  </linearGradient>
+  <linearGradient id="p3b" x1="160" y1="80" x2="520" y2="300" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#0b1222" stop-opacity="0.9"/>
+    <stop offset="1" stop-color="#22d3ee" stop-opacity="0.25"/>
+  </linearGradient>
+</defs>
+<rect width="640" height="360" rx="28" fill="#0b1222"/>
+<rect x="40" y="34" width="560" height="292" rx="24" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+<rect x="70" y="94" width="500" height="210" rx="18" fill="url(#p3b)" stroke="#1f2937"/>
+<rect x="94" y="70" width="132" height="28" rx="10" fill="#0ea5e9" opacity="0.85"/>
+<rect x="240" y="70" width="132" height="28" rx="10" fill="#22d3ee" opacity="0.6"/>
+<rect x="386" y="70" width="132" height="28" rx="10" fill="#7367f8" opacity="0.5"/>
+<rect x="110" y="128" width="420" height="140" rx="14" fill="#0b1222" stroke="#1f2937"/>
+<rect x="132" y="148" width="180" height="16" rx="8" fill="#22d3ee" opacity="0.9"/>
+<rect x="132" y="174" width="220" height="12" rx="6" fill="#94a3b8" opacity="0.8"/>
+<rect x="132" y="194" width="150" height="12" rx="6" fill="#475569" opacity="0.7"/>
+<rect x="132" y="214" width="260" height="12" rx="6" fill="#1e293b" opacity="0.8"/>
+<rect x="132" y="234" width="220" height="12" rx="6" fill="#334155" opacity="0.6"/>
+<path d="M360 172h136" stroke="#22d3ee" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+<path d="M360 198h110" stroke="#7367f8" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+<path d="M360 224h90" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+<path d="M360 250h140" stroke="#22d3ee" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+<path d="M120 320c24-12 56-22 96-16s70 18 108 8 90-40 134-26 66 46 98 50" stroke="url(#p3a)" stroke-width="4" stroke-linecap="round" opacity="0.65"/>
+</svg>
