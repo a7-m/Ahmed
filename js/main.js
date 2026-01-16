@@ -46,29 +46,46 @@
 
   document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-  // Contact form handling (frontend-only)
+  // Contact form handling (real submission)
   const form = document.querySelector('.contact-form');
   const status = document.querySelector('.form-status');
+  const submitBtn = form?.querySelector('button[type="submit"]');
 
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.reportValidity()) return;
 
-    const data = Object.fromEntries(new FormData(form));
+    const endpoint = form.dataset.endpoint || form.getAttribute('action');
+    if (!endpoint) {
+      status.textContent = 'يرجى ضبط رابط الإرسال أولاً.';
+      status.style.color = '#f97316';
+      return;
+    }
+
     status.textContent = 'جارٍ إرسال رسالتك...';
     status.style.color = 'var(--muted)';
+    if (submitBtn) submitBtn.disabled = true;
 
-    // Simulate async send
-    setTimeout(() => {
-      if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-        status.textContent = 'يرجى إدخال بريد إلكتروني صالح.';
-        status.style.color = '#f97316';
-        return;
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' },
+      });
+
+      if (!response.ok) {
+        throw new Error('Request failed');
       }
-      status.textContent = 'تم استلام رسالتك! سأعود إليك خلال 24 ساعة.';
+
+      status.textContent = 'تم إرسال رسالتك بنجاح! سأعود إليك قريباً.';
       status.style.color = 'var(--accent)';
       form.reset();
-    }, 600);
+    } catch (error) {
+      status.textContent = 'تعذر إرسال الرسالة الآن. حاول مرة أخرى لاحقاً.';
+      status.style.color = '#f97316';
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
   });
 
   // Dynamic year
