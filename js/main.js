@@ -77,7 +77,7 @@
         throw new Error('Request failed');
       }
 
-      status.textContent = 'تم إرسال رسالتك بنجاح! سأعود إليك قريباً.';
+      status.textContent = 'تم إرسال رسالتك بنجاح! سيتم الرد عليك قريباً.';
       status.style.color = 'var(--accent)';
       form.reset();
     } catch (error) {

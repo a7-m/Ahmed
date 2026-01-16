@@ -319,6 +319,8 @@ p {
   background: var(--panel);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+  position: relative;
+  z-index: 1;
 }
 
 .hero-banner img {
@@ -381,13 +383,14 @@ p {
 
 .floating-card {
   position: absolute;
-  bottom: 8%;
-  right: -6%;
+  top: calc(100% + 12px);
+  right: 35%;
   padding: 14px 16px;
   border-radius: 14px;
   background: var(--panel);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+  z-index: 2;
   backdrop-filter: none;
   animation: none;
 }
